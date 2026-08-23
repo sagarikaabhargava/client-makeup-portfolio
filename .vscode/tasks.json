@@ -52,6 +52,26 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Restore and commit local config",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"stash",
+				"pop",
+				";",
+				"git",
+				"add",
+				".",
+				";",
+				"git",
+				"commit",
+				"-m",
+				"Update portfolio files"
+			],
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }
