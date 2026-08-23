@@ -72,6 +72,35 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Publish portfolio repository",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"-u",
+				"origin",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify GitHub publication",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short",
+				";",
+				"git",
+				"log",
+				"-1",
+				"--oneline"
+			],
+			"isBackground": false,
+			"problemMatcher": []
 		}
 	]
 }

@@ -211,8 +211,8 @@ body {
 
 .center-arch-portal {
   position: relative;
-  width: clamp(170px, 25vw, 220px);
-  height: clamp(240px, 34vw, 300px);
+  width: clamp(190px, 26vw, 240px);
+  height: clamp(280px, 36vw, 340px);
   border-radius: 110px 110px 0 0;
   overflow: hidden;
   border: 4px solid var(--burgundy-dark);
@@ -1121,4 +1121,245 @@ body {
   .makeup-doodle { animation: none; opacity: 0.9; }
   .slide-editorial .editorial-square { animation: none; }
   .envelope-trigger i { animation: none; }
+}
+
+/* --- SLIDE: PHOTO GALLERY (27 PHOTOS) --- */
+.gallery-section {
+  text-align: center;
+  padding: clamp(24px, 4vw, 42px);
+}
+
+.gallery-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--burgundy-main);
+  margin-bottom: 8px;
+}
+
+.gallery-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 3.5vw, 28px);
+  letter-spacing: 3px;
+  color: var(--burgundy-main);
+  margin-bottom: 24px;
+}
+
+/* Hidden Checkbox */
+#gallery-toggle {
+  display: none;
+}
+
+/* Toggle Button matching Luxury Crimson Theme */
+.gallery-btn {
+  display: inline-block;
+  background-color: var(--burgundy-main);
+  color: var(--text-white);
+  padding: 12px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 15px rgba(38, 3, 11, 0.2);
+}
+
+.gallery-btn:hover {
+  background-color: var(--burgundy-dark);
+  transform: translateY(-2px);
+}
+
+.btn-text-open {
+  display: inline;
+}
+
+.btn-text-close {
+  display: none;
+}
+
+/* --- SLIDE: HAIRSTYLING SHOWCASE (ORIGINAL PHOTO RATIO) --- */
+.slide-hairstyles {
+  text-align: center;
+}
+
+/* 4 Main Featured Photos Layout */
+.hairstyles-featured-grid {
+  column-count: 4;
+  column-gap: 16px;
+  margin-top: 24px;
+}
+
+.hairstyle-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  background: var(--burgundy-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hairstyle-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hairstyle-card:hover img {
+  transform: scale(1.02);
+}
+
+/* Hidden Checkbox */
+#hair-toggle {
+  display: none;
+}
+
+/* Toggle Button */
+.hair-toggle-btn {
+  display: inline-block;
+  background-color: var(--burgundy-main);
+  color: var(--text-white);
+  padding: 12px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  user-select: none;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 15px rgba(38, 3, 11, 0.2);
+}
+
+.hair-toggle-btn:hover {
+  background-color: var(--burgundy-dark);
+  transform: translateY(-2px);
+}
+
+.hair-btn-open {
+  display: inline;
+}
+
+.hair-btn-close {
+  display: none;
+}
+
+/* Collapsible Grid for 16 Remaining Photos */
+.hairstyles-more-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.hairstyles-more-grid {
+  column-count: 4;
+  column-gap: 16px;
+  margin-top: 24px;
+}
+
+#hair-toggle:checked ~ .hairstyles-more-container {
+  max-height: 12000px;
+  opacity: 1;
+}
+
+#hair-toggle:checked ~ .hair-toggle-btn {
+  background-color: var(--burgundy-dark);
+}
+
+#hair-toggle:checked ~ .hair-toggle-btn .hair-btn-open {
+  display: none;
+}
+
+#hair-toggle:checked ~ .hair-toggle-btn .hair-btn-close {
+  display: inline;
+}
+
+/* Responsive Column Breakdown */
+@media (max-width: 768px) {
+  .hairstyles-featured-grid,
+  .hairstyles-more-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .hairstyles-featured-grid,
+  .hairstyles-more-grid {
+    column-count: 1;
+  }
+}
+
+/* Gallery Dropdown Container */
+.gallery-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  background: var(--cream-dark);
+  box-shadow: 0 4px 12px rgba(38, 3, 11, 0.08);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+  filter: saturate(1.1);
+}
+
+/* Checkbox Toggle Active States */
+#gallery-toggle:checked ~ .gallery-container {
+  max-height: 8000px;
+  opacity: 1;
+}
+
+#gallery-toggle:checked ~ .gallery-btn {
+  background-color: var(--burgundy-dark);
+}
+
+#gallery-toggle:checked ~ .gallery-btn .btn-text-open {
+  display: none;
+}
+
+#gallery-toggle:checked ~ .gallery-btn .btn-text-close {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
