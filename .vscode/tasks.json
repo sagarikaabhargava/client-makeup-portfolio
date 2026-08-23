@@ -1,0 +1,57 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check GitHub repository state",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"status",
+				"--short"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Initialize portfolio Git repository",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"init",
+				"-b",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Add GitHub portfolio remote",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"remote",
+				"add",
+				"origin",
+				"https://github.com/sagarikaabhargava/client-makeup-portfolio.git"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Commit portfolio files",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"add",
+				".",
+				";",
+				"git",
+				"commit",
+				"-m",
+				"Create makeup artist portfolio"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
