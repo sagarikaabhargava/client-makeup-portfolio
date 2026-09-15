@@ -1362,4 +1362,35 @@ body {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+}img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-card,
+.hairstyle-card,
+.editorial-square,
+.package-item {
+  contain: content;
+}
+
+.slide {
+  contain: layout paint;
+}
+
+video {
+  display: block;
+  max-width: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-card,
+.hairstyle-card,
+.editorial-square {
+  overflow: hidden;
+  contain: layout paint;
 }
